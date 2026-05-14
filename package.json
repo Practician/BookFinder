@@ -1,0 +1,17 @@
+{
+  "name": "book-search",
+  "version": "1.0.0",
+  "description": "Мульти-поиск книг по библиотекам",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "cheerio": "^1.0.0",
+    "puppeteer": "^23.0.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Поиск книг по Флибусте, Anna's Archive, Z-Library и OceanOfPDF">
+  <title>📚 BookFinder — Поиск книг</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0a0e1a">
+</head>
+<body>
+  <!-- Animated background -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <header id="header">
+    <div class="logo">
+      <span class="logo-icon">📚</span>
+      <span class="logo-text">Book<span class="logo-accent">Finder</span></span>
+    </div>
+    <div class="header-subtitle">Мульти-поиск по 4 библиотекам</div>
+  </header>
+
+  <main id="main">
+    <!-- Search Section -->
+    <section class="search-section" id="search-section">
+      <div class="search-wrapper">
+        <div class="search-box" id="search-box">
+          <div class="search-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </div>
+          <input type="text" id="search-input" placeholder="Название книги или автор..." autocomplete="off" autofocus>
+          <button class="search-btn" id="search-btn" title="Искать">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Source Tabs -->
+      <div class="source-tabs" id="source-tabs">
+        <button class="tab active" data-source="all" id="tab-all">
+          <span class="tab-icon">🔍</span>
+          <span class="tab-label">Все</span>
+          <span class="tab-count" id="count-all"></span>
+        </button>
+        <button class="tab" data-source="flibusta" id="tab-flibusta">
+          <span class="tab-icon">📖</span>
+          <span class="tab-label">Флибуста</span>
+          <span class="tab-count" id="count-flibusta"></span>
+        </button>
+        <button class="tab" data-source="annas" id="tab-annas">
+          <span class="tab-icon">🏛️</span>
+          <span class="tab-label">Anna's</span>
+          <span class="tab-count" id="count-annas"></span>
+        </button>
+        <button class="tab" data-source="zlib" id="tab-zlib">
+          <span class="tab-icon">📕</span>
+          <span class="tab-label">Z-Library</span>
+          <span class="tab-count" id="count-zlib"></span>
+        </button>
+        <button class="tab" data-source="librain" id="tab-librain">
+          <span class="tab-icon">🧠</span>
+          <span class="tab-label">Librain</span>
+          <span class="tab-count" id="count-librain"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Status / Loading -->
+    <div class="status-area" id="status-area">
+      <div class="loading-indicator" id="loading" style="display:none;">
+        <div class="loading-ring">
+          <div></div><div></div><div></div><div></div>
+        </div>
+        <div class="loading-text" id="loading-text">Поиск по библиотекам...</div>
+        <div class="loading-sources" id="loading-sources"></div>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <section class="results-section" id="results-section" style="display:none;">
+      <div class="results-header" id="results-header">
+        <span id="results-summary"></span>
+      </div>
+      <div class="results-grid" id="results-grid"></div>
+    </section>
+
+    <!-- Empty State -->
+    <section class="empty-state" id="empty-state">
+      <div class="empty-icon">📚</div>
+      <h2>Найдите свою книгу</h2>
+      <p>Введите название книги или имя автора и мы найдём её в 4 библиотеках одновременно</p>
+      <div class="source-badges">
+        <span class="badge badge-flibusta">Флибуста</span>
+        <span class="badge badge-annas">Anna's Archive</span>
+        <span class="badge badge-zlib">Z-Library</span>
+        <span class="badge badge-librain">Librain</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
